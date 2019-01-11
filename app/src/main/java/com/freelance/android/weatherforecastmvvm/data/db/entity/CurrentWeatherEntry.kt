@@ -1,4 +1,4 @@
-package com.freelance.android.weatherforecastmvvm.data.response
+package com.freelance.android.weatherforecastmvvm.data.db
 
 import com.google.gson.annotations.SerializedName
 
@@ -11,10 +11,10 @@ data class CurrentWeatherEntry(
     val lastUpdated: String,
 
     @SerializedName("temp_c")
-    val tempC: Int,
+    val tempC: Double,
 
     @SerializedName("temp_f")
-    val tempF: Int,
+    val tempF: Double,
 
     @SerializedName("is_day")
     val isDay: Int,
@@ -24,7 +24,7 @@ data class CurrentWeatherEntry(
     val windMph: Double,
 
     @SerializedName("wind_kph")
-    val windKph: Int,
+    val windKph: Double,
 
     @SerializedName("wind_degree")
     val windDegree: Int,
@@ -53,9 +53,9 @@ data class CurrentWeatherEntry(
     val feelslikeF: Double,
 
     @SerializedName("vis_km")
-    val visKm: Int,
+    val visKm: Double,
 
     @SerializedName("vis_miles")
-    val visMiles: Int,
+    val visMiles: Double,
     val uv: Int
 )

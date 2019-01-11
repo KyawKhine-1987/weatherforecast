@@ -1,4 +1,4 @@
-package com.freelance.android.weatherforecastmvvm.data.response
+package com.freelance.android.weatherforecastmvvm.data.db
 
 import com.google.gson.annotations.SerializedName
 
