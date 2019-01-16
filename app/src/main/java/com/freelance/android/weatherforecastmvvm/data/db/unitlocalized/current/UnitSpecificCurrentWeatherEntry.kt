@@ -1,4 +1,4 @@
-package com.freelance.android.weatherforecastmvvm.data.db.unitlocalized
+package com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.current
 
 /**
  * Created by KyawKhine on 01/11/2019 3:45 PM.

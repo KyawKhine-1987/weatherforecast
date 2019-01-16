@@ -2,6 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory
         android:title="Weather Location">
+        <!--android:key is important.-->
         <SwitchPreference
             android:key="USE_DEVICE_LOCATION"
             android:title="Use device location"
@@ -13,12 +14,14 @@
             android:key="CUSTOM_LOCATION"
             android:title="Location"
             android:summary="The location for which the weather is displayed"
-            android:defaultValue="Los Angeles"
+            android:defaultValue="Yangon"
             android:dependency="USE_DEVICE_LOCATION"/>
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="Units">
+        <!--dropdownlist
+        android:key is important.-->
         <ListPreference
             android:key="UNIT_SYSTEM"
             android:title="Unit system"
