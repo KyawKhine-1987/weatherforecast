@@ -43,7 +43,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_futureListWeatherFragment_to_futureDetailWeatherFragment">
+                            <entry key="actionDetail">
                               <value>
                                 <LayoutPositions />
                               </value>

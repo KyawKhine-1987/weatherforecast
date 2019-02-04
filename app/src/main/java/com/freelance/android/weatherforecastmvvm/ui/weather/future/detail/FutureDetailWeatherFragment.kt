@@ -99,14 +99,14 @@ class FutureDetailWeatherFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun updateDate(date: LocalDate) {
-        Log.i(LOG_TAG, "TEST: updateLocation() called...")
+        Log.i(LOG_TAG, "TEST: updateDate() called...")
 
         (activity as? AppCompatActivity)?.supportActionBar?.subtitle =
                 date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM))
     }
 
     private fun updateTemperatures(temperature: Double, min: Double, max: Double) {
-        Log.i(LOG_TAG, "TEST: updateLocation() called...")
+        Log.i(LOG_TAG, "TEST: updateTemperatures() called...")
 
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("°C", "°F")
         tvTemperature.text = "$temperature$unitAbbreviation"
@@ -114,25 +114,35 @@ class FutureDetailWeatherFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun updateCondition(condition: String) {
+        Log.i(LOG_TAG, "TEST: updateCondition() called...")
+
         tvCondition.text = condition
     }
 
     private fun updatePrecipitation(precipitationVolume: Double) {
+        Log.i(LOG_TAG, "TEST: updatePrecipitation() called...")
+
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("mm", "in")
         tvPrecipitation.text = "Precipitation: $precipitationVolume $unitAbbreviation"
     }
 
     private fun updateWindSpeed(windSpeed: Double) {
+        Log.i(LOG_TAG, "TEST: updateWindSpeed() called...")
+
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("kph", "mph")
         tvWind.text = "Wind speed: $windSpeed $unitAbbreviation"
     }
 
     private fun updateVisibility(visibilityDistance: Double) {
+        Log.i(LOG_TAG, "TEST: updateVisibility() called...")
+
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("km", "mi.")
         tvVisibility.text = "Visibility: $visibilityDistance $unitAbbreviation"
     }
 
     private fun updateUV(uv: Double) {
+        Log.i(LOG_TAG, "TEST: updateUV() called...")
+
         tvUV.text = "UV: $uv"
     }
 }
