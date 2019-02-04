@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity(), KodeinAware {
     }
 
     private fun hasLocationPermission(): Boolean {
-        Log.i(LOG_TAG, "TEST: onRequestPermissionsResult() called...")
+        Log.i(LOG_TAG, "TEST: hasLocationPermission() called...")
 
         return ContextCompat.checkSelfPermission(
             this,

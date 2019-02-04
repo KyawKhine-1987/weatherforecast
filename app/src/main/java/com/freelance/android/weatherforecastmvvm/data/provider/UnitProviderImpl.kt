@@ -15,7 +15,7 @@ class UnitProviderImpl(context: Context) : PreferenceProvider(context), UnitProv
         get() = PreferenceManager.getDefaultSharedPreferences(appContext)*/
 
     override fun getUnitSystem(): UnitSystem {
-        Log.i(LOG_TAG, "TEST: onCreate() called...")
+        Log.i(LOG_TAG, "TEST: getUnitSystem() called...")
 
         val selectedName = preferences.getString(UNIT_SYSTEM, UnitSystem.METRIC.name)
         return UnitSystem.valueOf(selectedName!!)//not null accepted.

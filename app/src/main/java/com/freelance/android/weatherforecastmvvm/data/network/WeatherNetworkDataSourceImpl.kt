@@ -37,7 +37,7 @@ class WeatherNetworkDataSourceImpl(
         get() = _downloadedFutureWeather
 
     override suspend fun fetchFutureWeather(location: String, languageCode: String) {
-        Log.i(LOG_TAG, "TEST: fetchCurrentWeather() called...")
+        Log.i(LOG_TAG, "TEST: fetchFutureWeather() called...")
 
         try {
 

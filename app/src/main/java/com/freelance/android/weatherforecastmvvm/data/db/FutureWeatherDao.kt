@@ -6,8 +6,10 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.freelance.android.weatherforecastmvvm.data.db.entity.FutureWeatherEntry
-import com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.future.ImperialSimpleFutureWeatherEntry
-import com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.future.MetricSimpleFutureWeatherEntry
+import com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.future.detail.ImperialDetailFutureWeatherEntry
+import com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.future.detail.MetricDetailFutureWeatherEntry
+import com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.future.list.ImperialSimpleFutureWeatherEntry
+import com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.future.list.MetricSimpleFutureWeatherEntry
 import org.threeten.bp.LocalDate
 
 /**
@@ -25,9 +27,17 @@ interface FutureWeatherDao {
     @Query("select * from future_weather where date(date) >= date(:startDate)")
     fun getSimpleWeatherForecastImperial(startDate: LocalDate): LiveData<List<ImperialSimpleFutureWeatherEntry>>
 
+    @Query("select * from future_weather where date(date) = date(:date)")
+    fun getDetailWeatherByDateMetric(date: LocalDate): LiveData<MetricDetailFutureWeatherEntry>
+
+    @Query("select * from future_weather where date(date) = date(:date)")
+    fun getDetailWeatherByDateImperial(date: LocalDate): LiveData<ImperialDetailFutureWeatherEntry>
+
+
     @Query("select count(id) from future_weather where date(date) >= date(:startDate)")
     fun countFutureWeather(startDate: LocalDate): Int
 
-    @Query("delete from future_weather where date(date) <= date(:firstDateToKeep)")
+    /*@Query("delete from future_weather where date(date) <= date(:firstDateToKeep)")*/
+    @Query("delete from future_weather where date(date) < date(:firstDateToKeep)")
     fun deleteOldEntries(firstDateToKeep: LocalDate)
 }

@@ -1,4 +1,4 @@
-package com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.future
+package com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.future.list
 
 import org.threeten.bp.LocalDate
 

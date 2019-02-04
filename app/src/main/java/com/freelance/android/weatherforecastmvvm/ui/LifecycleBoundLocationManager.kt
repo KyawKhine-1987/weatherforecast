@@ -1,6 +1,7 @@
 package com.freelance.android.weatherforecastmvvm.ui
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
@@ -19,11 +20,16 @@ class LifecycleBoundLocationManager(
     private val fusedLocationProviderClient: FusedLocationProviderClient,
     private val locationCallback: LocationCallback // this method called from MainActivity.kt
 ) : LifecycleObserver {
+
+    private val LOG_TAG = LifecycleBoundLocationManager::class.java.name
+
     init {
         lifecycleOwner.lifecycle.addObserver(this)
     }
 
     private val locationRequest = LocationRequest().apply {
+        Log.i(LOG_TAG, "TEST: locationRequest() called...")
+
         interval = 5000 // 5 seconds
         fastestInterval = 5000
         priority = LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY
@@ -32,11 +38,15 @@ class LifecycleBoundLocationManager(
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     @SuppressLint("MissingPermission")
     fun startLocationUpdates(){
+        Log.i(LOG_TAG, "TEST: startLocationUpdates() called...")
+
         fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, null)
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     fun removeLocationUpdates(){
+        Log.i(LOG_TAG, "TEST: removeLocationUpdates() called...")
+
         fusedLocationProviderClient.removeLocationUpdates(locationCallback)
     }
 }

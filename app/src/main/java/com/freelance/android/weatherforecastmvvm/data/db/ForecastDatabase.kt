@@ -15,7 +15,7 @@ import com.freelance.android.weatherforecastmvvm.data.db.entity.WeatherLocation
 
 @Database(
     entities = [CurrentWeatherEntry::class, FutureWeatherEntry::class, WeatherLocation::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 

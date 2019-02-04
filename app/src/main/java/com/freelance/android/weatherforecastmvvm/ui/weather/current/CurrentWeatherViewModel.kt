@@ -1,5 +1,6 @@
 package com.freelance.android.weatherforecastmvvm.ui.weather.current
 
+import android.util.Log
 import com.freelance.android.weatherforecastmvvm.data.provider.UnitProvider
 import com.freelance.android.weatherforecastmvvm.data.repository.ForecastRepository
 import com.freelance.android.weatherforecastmvvm.internal.lazyDeferred
@@ -9,6 +10,8 @@ class CurrentWeatherViewModel(
     private val forecastRepository: ForecastRepository,
     unitProvider: UnitProvider
 ) : WeatherViewModel(forecastRepository, unitProvider) {
+
+    private val LOG_TAG = CurrentWeatherViewModel::class.java.name
     //private val unitSystem = UnitSystem.METRIC //get from settings later
     /*private val unitSystem = unitProvider.getUnitSystem()
 
@@ -17,6 +20,8 @@ class CurrentWeatherViewModel(
 
     //this method called from Delegates.kt
     val weather by lazyDeferred {
+        Log.i(LOG_TAG, "TEST: weather() called...")
+
         forecastRepository.getCurrentWeather(super.isMetricUnit)
     }
 

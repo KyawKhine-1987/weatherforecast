@@ -14,13 +14,13 @@
             app:layout_constraintGuide_percent="0.5"/>
 
     <androidx.constraintlayout.widget.Group
-            android:id="@+id/gLoading"
+            android:id="@+id/currentGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             app:constraint_referenced_ids="pbLoading, tvLoading"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <ProgressBar
             android:id="@+id/pbLoading"
@@ -34,7 +34,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
             android:id="@+id/tvLoading"
@@ -50,7 +50,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pbLoading"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"/>
 
     <TextView
             android:id="@+id/tvCondition"
@@ -67,10 +67,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.017"
-            tools:text="Patchy rain possible" />
+            tools:text="Patchy rain possible"/>
 
     <ImageView
-            android:id="@+id/ivConditionIcon"
+            android:id="@+id/civConditionIcon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -86,7 +86,7 @@
             app:layout_constraintVertical_bias="0.207"
             app:layout_constraintWidth_percent="0.25"
             tools:src="@drawable/ic_weather_sunny"
-            tools:tint="#f9a920" />
+            tools:tint="#f9a920"/>
 
     <TextView
             android:id="@+id/tvTemperature"
@@ -96,13 +96,13 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
-            app:layout_constraintBottom_toBottomOf="@+id/ivConditionIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/civConditionIcon"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/ivConditionIcon"
+            app:layout_constraintTop_toTopOf="@+id/civConditionIcon"
             app:layout_constraintVertical_bias="1.0"
-            tools:text="25.0°C" />
+            tools:text="25.0°C"/>
 
     <TextView
             android:id="@+id/tvfeels_like_temperature"
@@ -117,7 +117,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvTemperature"
             app:layout_constraintTop_toBottomOf="@+id/tvTemperature"
             app:layout_constraintVertical_bias="0.0"
-            tools:text="Feels like 20.4°C" />
+            tools:text="Feels like 20.4°C"/>
 
     <TextView
             android:id="@+id/tvWind"
@@ -134,7 +134,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.542"
-            tools:text="Wind: SE, 5.3 m/s" />
+            tools:text="Wind: SE, 5.3 m/s"/>
 
     <TextView
             android:id="@+id/tvPrecipitation"
@@ -151,7 +151,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvWind"
             app:layout_constraintVertical_bias="0.0"
-            tools:text="Precipitation: 5 mm" />
+            tools:text="Precipitation: 5 mm"/>
 
     <TextView
             android:id="@+id/tvVisibility"
@@ -168,5 +168,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPrecipitation"
             app:layout_constraintVertical_bias="0.0"
-            tools:text="Visibility: 20 km" />
+            tools:text="Visibility: 20 km"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,7 +22,7 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
     private val LOG_TAG = CurrentWeatherFragment::class.java.name
     override val kodein by closestKodein()
     private val viewModelFactory: CurrentWeatherViewModelFactory by instance()
-    private lateinit var viewModel: CurrentWeatherViewModel
+    private lateinit var viewModel: CurrentWeatherViewModel //this code is created new Object for CurrentWeatherViewModel.kt.
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -71,7 +71,7 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
         currentWeather.observe(this@CurrentWeatherFragment, Observer {
             if (it == null) return@Observer
 
-            gLoading.visibility = View.GONE
+            currentGroup.visibility = View.GONE
             //updateLocation("Yangon")
             updateDateToToday()
             updateTemperatures(it.temperature, it.feelsLikeTemprature)
@@ -82,7 +82,7 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
 
             GlideApp.with(this@CurrentWeatherFragment)
                 .load("http:${it.conditionIconUrl}")
-                .into(ivConditionIcon)
+                .into(civConditionIcon)
         })
     }
 

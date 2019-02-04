@@ -7,7 +7,8 @@ import com.freelance.android.weatherforecastmvvm.data.db.FutureWeatherDao
 import com.freelance.android.weatherforecastmvvm.data.db.WeatherLocationDao
 import com.freelance.android.weatherforecastmvvm.data.db.entity.WeatherLocation
 import com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.current.UnitSpecificCurrentWeatherEntry
-import com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.future.UnitSpecificSimpleFutureWeatherEntry
+import com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.future.detail.UnitSpecificDetailFutureWeatherEntry
+import com.freelance.android.weatherforecastmvvm.data.db.unitlocalized.future.list.UnitSpecificSimpleFutureWeatherEntry
 import com.freelance.android.weatherforecastmvvm.data.network.FORECAST_DAYS_COUNT
 import com.freelance.android.weatherforecastmvvm.data.network.WeatherNetworkDataSource
 import com.freelance.android.weatherforecastmvvm.data.network.response.CurrentWeatherResponse
@@ -47,6 +48,7 @@ class ForecastRepositoryImpl(
 
     override suspend fun getCurrentWeather(metric: Boolean): LiveData<out UnitSpecificCurrentWeatherEntry> {
         Log.i(LOG_TAG, "TEST: getCurrentWeather() called...")
+
         return withContext(Dispatchers.IO) {
 
             initWeatherData()
@@ -62,10 +64,25 @@ class ForecastRepositoryImpl(
         startDate: LocalDate,
         metric: Boolean
     ): LiveData<out List<UnitSpecificSimpleFutureWeatherEntry>> {
+        Log.i(LOG_TAG, "TEST: getFutureWeatherList() called...")
+
         return withContext(Dispatchers.IO) {
             initWeatherData()
             return@withContext if (metric) futureWeatherDao.getSimpleWeatherForecastMetric(startDate)
             else futureWeatherDao.getSimpleWeatherForecastImperial(startDate)
+        }
+    }
+
+    override suspend fun getFutureWeatherByDate(
+        date: LocalDate,
+        metric: Boolean
+    ): LiveData<out UnitSpecificDetailFutureWeatherEntry> {
+        Log.i(LOG_TAG, "TEST: getFutureWeatherByDate() called...")
+
+        return withContext(Dispatchers.IO) {
+            initWeatherData()
+            return@withContext if (metric) futureWeatherDao.getDetailWeatherByDateMetric(date)
+            else futureWeatherDao.getDetailWeatherByDateImperial(date)
         }
     }
 
