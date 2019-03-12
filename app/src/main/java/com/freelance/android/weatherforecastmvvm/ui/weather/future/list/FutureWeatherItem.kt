@@ -52,7 +52,7 @@ class FutureWeatherItem(
         Log.i(LOG_TAG, "TEST: ViewHolder.updateConditionImage() called...")
 
         GlideApp.with(this.containerView)
-            .load("http:" + weatherEntry.conditionIconUrl)
+            .load("https:" + weatherEntry.conditionIconUrl)
             .into(flivConditionIcon)
     }
 

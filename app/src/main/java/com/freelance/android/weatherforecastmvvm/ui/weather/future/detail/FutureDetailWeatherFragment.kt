@@ -80,8 +80,8 @@ class FutureDetailWeatherFragment : ScopedFragment(), KodeinAware {
             updateUV(weatherEntry.uv)
 
             GlideApp.with(this@FutureDetailWeatherFragment)
-                .load("http:" + weatherEntry.conditionIconUrl)
-                .into(fivConditionIcon)
+                .load("https:" + weatherEntry.conditionIconUrl)
+                .into(fdivConditionIcon)
         })
     }
 
@@ -109,40 +109,40 @@ class FutureDetailWeatherFragment : ScopedFragment(), KodeinAware {
         Log.i(LOG_TAG, "TEST: updateTemperatures() called...")
 
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("°C", "°F")
-        tvTemperature.text = "$temperature$unitAbbreviation"
-        tvMin_Max_Temperature.text = "Min: $min$unitAbbreviation, Max: $max$unitAbbreviation"
+        fdtvTemperature.text = "$temperature$unitAbbreviation"
+        fdtvMin_Max_Temperature.text = "Min: $min$unitAbbreviation, Max: $max$unitAbbreviation"
     }
 
     private fun updateCondition(condition: String) {
         Log.i(LOG_TAG, "TEST: updateCondition() called...")
 
-        tvCondition.text = condition
+        fdtvCondition.text = condition
     }
 
     private fun updatePrecipitation(precipitationVolume: Double) {
         Log.i(LOG_TAG, "TEST: updatePrecipitation() called...")
 
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("mm", "in")
-        tvPrecipitation.text = "Precipitation: $precipitationVolume $unitAbbreviation"
+        fdtvPrecipitation.text = "Precipitation: $precipitationVolume $unitAbbreviation"
     }
 
     private fun updateWindSpeed(windSpeed: Double) {
         Log.i(LOG_TAG, "TEST: updateWindSpeed() called...")
 
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("kph", "mph")
-        tvWind.text = "Wind speed: $windSpeed $unitAbbreviation"
+        fdtvWind.text = "Wind speed: $windSpeed $unitAbbreviation"
     }
 
     private fun updateVisibility(visibilityDistance: Double) {
         Log.i(LOG_TAG, "TEST: updateVisibility() called...")
 
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("km", "mi.")
-        tvVisibility.text = "Visibility: $visibilityDistance $unitAbbreviation"
+        fdtvVisibility.text = "Visibility: $visibilityDistance $unitAbbreviation"
     }
 
     private fun updateUV(uv: Double) {
         Log.i(LOG_TAG, "TEST: updateUV() called...")
 
-        tvUV.text = "UV: $uv"
+        fdtvUV.text = "UV: $uv"
     }
 }

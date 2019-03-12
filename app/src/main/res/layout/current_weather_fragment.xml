@@ -53,7 +53,7 @@
             app:layout_constraintVertical_bias="0.0"/>
 
     <TextView
-            android:id="@+id/tvCondition"
+            android:id="@+id/ctvCondition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -86,10 +86,11 @@
             app:layout_constraintVertical_bias="0.207"
             app:layout_constraintWidth_percent="0.25"
             tools:src="@drawable/ic_weather_sunny"
-            tools:tint="#f9a920"/>
+            tools:tint="#f9a920"
+            android:contentDescription="@string/weatherSituation"/>
 
     <TextView
-            android:id="@+id/tvTemperature"
+            android:id="@+id/ctvTemperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -105,22 +106,22 @@
             tools:text="25.0°C"/>
 
     <TextView
-            android:id="@+id/tvfeels_like_temperature"
+            android:id="@+id/ctvfeels_like_temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvTemperature"
+            app:layout_constraintEnd_toEndOf="@+id/ctvTemperature"
             app:layout_constraintHorizontal_bias="0.423"
-            app:layout_constraintStart_toStartOf="@+id/tvTemperature"
-            app:layout_constraintTop_toBottomOf="@+id/tvTemperature"
+            app:layout_constraintStart_toStartOf="@+id/ctvTemperature"
+            app:layout_constraintTop_toBottomOf="@+id/ctvTemperature"
             app:layout_constraintVertical_bias="0.0"
             tools:text="Feels like 20.4°C"/>
 
     <TextView
-            android:id="@+id/tvWind"
+            android:id="@+id/ctvWind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -137,7 +138,7 @@
             tools:text="Wind: SE, 5.3 m/s"/>
 
     <TextView
-            android:id="@+id/tvPrecipitation"
+            android:id="@+id/ctvPrecipitation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -149,12 +150,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.031"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvWind"
+            app:layout_constraintTop_toBottomOf="@+id/ctvWind"
             app:layout_constraintVertical_bias="0.0"
             tools:text="Precipitation: 5 mm"/>
 
     <TextView
-            android:id="@+id/tvVisibility"
+            android:id="@+id/ctvVisibility"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -166,7 +167,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.031"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvPrecipitation"
+            app:layout_constraintTop_toBottomOf="@+id/ctvPrecipitation"
             app:layout_constraintVertical_bias="0.0"
             tools:text="Visibility: 20 km"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

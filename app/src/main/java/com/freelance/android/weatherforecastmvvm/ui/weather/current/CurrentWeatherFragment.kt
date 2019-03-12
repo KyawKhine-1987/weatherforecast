@@ -81,7 +81,7 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
             updateVisibility(it.visibilityDistance)
 
             GlideApp.with(this@CurrentWeatherFragment)
-                .load("http:${it.conditionIconUrl}")
+                .load("https:${it.conditionIconUrl}")
                 .into(civConditionIcon)
         })
     }
@@ -109,34 +109,34 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
         Log.i(LOG_TAG, "TEST: updateTemperatures() called...")
 
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("°C", "°F")
-        tvTemperature.text = "$temperature $unitAbbreviation"
-        tvfeels_like_temperature.text = "Feels like: $feelsLike $unitAbbreviation"
+        ctvTemperature.text = "$temperature $unitAbbreviation"
+        ctvfeels_like_temperature.text = "Feels like: $feelsLike $unitAbbreviation"
     }
 
     private fun updateCondition(condition: String) {
         Log.i(LOG_TAG, "TEST: updateCondition() called...")
 
-        tvCondition.text = condition
+        ctvCondition.text = condition
     }
 
     private fun updatePrecipitation(precipitationVolume: Double) {
         Log.i(LOG_TAG, "TEST: updatePrecipitation() called...")
 
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("mm", "in") //millimeter and inches
-        tvPrecipitation.text = "Precipitation: $precipitationVolume $unitAbbreviation"
+        ctvPrecipitation.text = "Precipitation: $precipitationVolume $unitAbbreviation"
     }
 
     private fun updateWind(windDirection: String, windSpeed: Double) {
         Log.i(LOG_TAG, "TEST: updateWind() called...")
 
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("kph", "mph") //millimeter and inches
-        tvWind.text = "Wind: $windDirection, $windSpeed $unitAbbreviation"
+        ctvWind.text = "Wind: $windDirection, $windSpeed $unitAbbreviation"
     }
 
     private fun updateVisibility(visibilityDistance: Double) {
         Log.i(LOG_TAG, "TEST: updateVisibility() called...")
 
         val unitAbbreviation = chooseLocalizedUnitAbbreviation("km", "mi.") //millimeter and inches
-        tvVisibility.text = "Visibility: $visibilityDistance $unitAbbreviation"
+        ctvVisibility.text = "Visibility: $visibilityDistance $unitAbbreviation"
     }
 }
