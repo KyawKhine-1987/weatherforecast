@@ -46,6 +46,7 @@ class ForecastRepositoryImpl(
         }
     }
 
+    //"out" keyword solved the generic problem.
     override suspend fun getCurrentWeather(metric: Boolean): LiveData<out UnitSpecificCurrentWeatherEntry> {
         Log.i(LOG_TAG, "TEST: getCurrentWeather() called...")
 

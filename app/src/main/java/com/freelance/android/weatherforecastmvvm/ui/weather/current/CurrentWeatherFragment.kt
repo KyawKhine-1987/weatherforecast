@@ -1,5 +1,6 @@
 package com.freelance.android.weatherforecastmvvm.ui.weather.current
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -105,6 +106,7 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
         (activity as? AppCompatActivity)?.supportActionBar?.subtitle = "Today"
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updateTemperatures(temperature: Double, feelsLike: Double) {
         Log.i(LOG_TAG, "TEST: updateTemperatures() called...")
 
@@ -119,6 +121,7 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
         ctvCondition.text = condition
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updatePrecipitation(precipitationVolume: Double) {
         Log.i(LOG_TAG, "TEST: updatePrecipitation() called...")
 
@@ -126,6 +129,7 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
         ctvPrecipitation.text = "Precipitation: $precipitationVolume $unitAbbreviation"
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updateWind(windDirection: String, windSpeed: Double) {
         Log.i(LOG_TAG, "TEST: updateWind() called...")
 
@@ -133,6 +137,7 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
         ctvWind.text = "Wind: $windDirection, $windSpeed $unitAbbreviation"
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updateVisibility(visibilityDistance: Double) {
         Log.i(LOG_TAG, "TEST: updateVisibility() called...")
 

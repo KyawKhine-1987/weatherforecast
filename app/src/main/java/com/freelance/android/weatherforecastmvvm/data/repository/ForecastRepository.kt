@@ -13,6 +13,7 @@ import org.threeten.bp.LocalDate
 
 
 interface ForecastRepository {
+    //"out" keyword solved the generic problem.
     suspend fun getCurrentWeather(metric: Boolean): LiveData<out UnitSpecificCurrentWeatherEntry> // suspend feature from Coroutines.
 
     suspend fun getFutureWeatherList(

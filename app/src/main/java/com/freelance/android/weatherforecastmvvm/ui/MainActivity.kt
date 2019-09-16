@@ -85,7 +85,15 @@ class MainActivity : AppCompatActivity(), KodeinAware {
     override fun onSupportNavigateUp(): Boolean {
         Log.i(LOG_TAG, "TEST: onSupportNavigateUp() called...")
 
-        return NavigationUI.navigateUp(null, navController) //must use IDE Canary Version 3.3 RC-3 and ext.navigation_version = '1.0.0-alpha06'
+        return NavigationUI.navigateUp(
+            navController,
+            null
+        )
+
+       /* return NavigationUI.navigateUp(
+            null,
+            navController
+        )*/ //must use IDE Canary Version 3.3 RC-3 and ext.navigation_version = '1.0.0-alpha06'
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {

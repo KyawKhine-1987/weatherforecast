@@ -24,6 +24,10 @@ class CurrentWeatherViewModel(
 
         forecastRepository.getCurrentWeather(super.isMetricUnit)
     }
+    /*Coroutines by another name
+      The pattern of async and await in other languages is based on coroutines. If you're familiar with this pattern, the suspend keyword is similar to async. However in Kotlin, await() is implicit when calling a suspend function.
+
+      Kotlin has a method Deferred.await() that is used to wait for the result from a coroutine started with the async builder.*/
 
     /*val weatherLocation by lazyDeferred {
         forecastRepository.getWeatherLocation()
